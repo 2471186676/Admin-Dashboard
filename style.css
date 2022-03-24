@@ -1,5 +1,12 @@
+@font-face {
+    font-family: roboto;
+    src: url("./Roboto/Roboto-Regular.ttf");
+}
 :root{
     overflow: hidden;
+    --contrast-color: #60A5FA;
+    --backGround-color: #BFDBFE;
+    --layer-color: #EFF6FF;
 }
 
 body{
@@ -9,6 +16,8 @@ body{
 main{
     display:flex;
     flex-direction: row;
+    font-family: roboto;
+    color: wheat;
 }
 
 .leftSide{
@@ -17,7 +26,7 @@ main{
 
     padding: 10px;
 
-    background-color: antiquewhite;
+    background-color: var(--contrast-color);
 }
 
 .leftSide .navBar{
@@ -27,23 +36,73 @@ main{
     height: inherit;
     width: inherit;
 
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--contrast-color);
 }
 
 .navBar .header{
     height: 10vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+
+    display:grid;
+    grid-template-columns: 30% 70%;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+
+    font-size: larger;
 }
 
-.navBar .PageNav{
+.navBar .header img{
+    width: 75%;
+    height: 75%;
+}
+
+.navBar .header a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+}
+
+
+.navBar .pageNav{
     flex:1;
     background-color: rgba(0, 0, 0, 0.4);
+    
+    display: flex;
+    flex-direction: column;
 }
+
+.navBar .pageNav button{
+    all:unset;
+    cursor: pointer;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+    text-align: left;    
+}
+
+.navBar .pageNav button:hover{
+    background-color: black;
+}
+
+.navBar .pageNav img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.navBar .pageNav .separater{
+    height: 7vh;
+}
+
+.navBar .pageNav .separater:hover{
+    background-color: transparent;
+}
+
 
 
 
 .rightSide{
-    background-color: rgb(180, 207, 207);
+    background-color: var(--backGround-color);
 
     height: 100vh;
     width: 75vw;
@@ -55,7 +114,7 @@ main{
 .rightSide .header{
     height: 20vh;
 
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--layer-color);
 }
 
 .rightSide .header .searchBar{
