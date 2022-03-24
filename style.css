@@ -1,0 +1,96 @@
+:root{
+    overflow: hidden;
+}
+
+body{
+    margin: 0;
+	padding: 0;
+}
+main{
+    display:flex;
+    flex-direction: row;
+}
+
+.leftSide{
+    height: 100vh;
+    width: 25vw;
+
+    padding: 10px;
+
+    background-color: antiquewhite;
+}
+
+.leftSide .navBar{
+    display: flex;
+    flex-direction: column;
+
+    height: inherit;
+    width: inherit;
+
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navBar .header{
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navBar .PageNav{
+    flex:1;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+.rightSide{
+    background-color: rgb(180, 207, 207);
+
+    height: 100vh;
+    width: 75vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSide .header{
+    height: 20vh;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.rightSide .header .searchBar{
+    height: 50%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.rightSide .header .userGreet{
+    height: 50%;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.rightSide .body{
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-direction: row;
+}
+
+.rightSide .body .project{
+    width: 70%;
+
+    background-color:  rgba(255, 255, 255, 0.3);
+}
+
+.rightSide .body .suggestion{
+    flex: 1;
+    background-color:  rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+
+
