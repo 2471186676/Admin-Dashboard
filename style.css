@@ -1,155 +1,272 @@
 @font-face {
-    font-family: roboto;
-    src: url("./Roboto/Roboto-Regular.ttf");
+	font-family: roboto;
+	src: url("./Roboto/Roboto-Regular.ttf");
 }
-:root{
-    overflow: hidden;
-    --contrast-color: #60A5FA;
-    --backGround-color: #BFDBFE;
-    --layer-color: #EFF6FF;
+:root {
+	overflow: hidden;
+	--contrast-color: #60a5fa;
+	--backGround-color: #bfdbfe;
+	--layer-color: #eff6ff;
 }
 
-body{
-    margin: 0;
+/* remove styling  */
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+body {
+	margin: 0;
 	padding: 0;
 }
-main{
-    display:flex;
-    flex-direction: row;
-    font-family: roboto;
-    color: wheat;
+main {
+	display: flex;
+	flex-direction: row;
+	font-family: roboto;
+	color: wheat;
 }
 
-.leftSide{
-    height: 100vh;
-    width: 25vw;
+.leftSide {
+	height: 100vh;
+	width: 20vw;
 
-    padding: 10px;
+	padding: 10px;
 
-    background-color: var(--contrast-color);
+	background-color: var(--contrast-color);
 }
 
-.leftSide .navBar{
-    display: flex;
-    flex-direction: column;
+.leftSide .navBar {
+	display: flex;
+	flex-direction: column;
 
-    height: inherit;
-    width: inherit;
+	height: inherit;
+	width: inherit;
 
-    background-color: var(--contrast-color);
+	background-color: var(--contrast-color);
 }
 
-.navBar .header{
-    height: 10vh;
-    padding: 5px;
+.navBar .header {
+	height: 10vh;
+	padding: 5px;
 
-    display:grid;
-    grid-template-columns: 30% 70%;
-    text-align: center;
-    align-items: center;
-    overflow: hidden;
+	margin-left: -5px;
 
-    font-size: larger;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	text-align: center;
+	align-items: center;
+	overflow: hidden;
+
+	font-size: larger;
+	font-weight: bolder;
 }
 
-.navBar .header img{
-    width: 75%;
-    height: 75%;
+.navBar .header img {
+	width: 75%;
+	height: 75%;
 }
 
-.navBar .header a{
-    font-size: 2rem;
-    text-decoration: none;
-    color: white;
+.navBar .header a {
+	font-size: 2rem;
+	text-decoration: none;
+	color: white;
 }
 
+.navBar .pageNav {
+	flex: 1;
+	background-color: rgba(0, 0, 0, 0.4);
 
-.navBar .pageNav{
-    flex:1;
-    background-color: rgba(0, 0, 0, 0.4);
-    
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
-.navBar .pageNav button{
-    all:unset;
-    cursor: pointer;
+.navBar .pageNav button {
+	all: unset;
+	cursor: pointer;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.navBar .pageNav button:hover {
+	background-color: black;
+}
+
+.navBar .pageNav img {
+	width: 1rem;
+	margin: 0 5px 0 5px;
+	margin-right: 1rem;
+	cursor: crosshair;
+}
+
+.navBar .pageNav .separater {
+	height: 7vh;
+	cursor: default;
+}
+
+.navBar .pageNav .separater:hover {
+	background-color: transparent;
+}
+
+/* --------------Other Side------------- */
+
+.rightSide {
+	background-color: var(--backGround-color);
+
+	height: 100vh;
+	width: 80vw;
+
+	display: flex;
+	flex-direction: column;
+}
+
+/* --------------Header------------- */
+
+.rightSide .header {
+	height: 20vh;
+
+	background-color: var(--layer-color);
+}
+
+.rightSide .header {
+	height: 15vh;
+	background-color: rgba(0, 0, 0, 0.3);
+
+	display: grid;
+	grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+}
+
+.rightSide .header .searchBar {
+	grid-column-start: 1;
+	grid-column-end: 4;
+
+	display: flex;
+	align-items: center;
+}
+
+.rightSide .header .searchBar .bar {
+	position: relative;
+	height: 2rem;
+	width: 90%;
+    margin-left: 5%;
+
+	background-color: white;
+	border-radius: 10rem;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.rightSide .header .searchBar .bar input {
+	height: 1rem;
+	width: 90%;
+
+	border: none;
+}
+
+.rightSide .header .searchBar .bar input:focus {
+	outline: none;
+}
+
+.rightSide .header .searchBar .bar button {
+	background-image: url("./img/circle.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+
+	margin-left: 1rem;
+	height: 1rem;
+	width: 1rem;
+}
+
+.rightSide .header .profile{
+    grid-column-start: 4;
+    grid-column-end: 6;
 
     display: grid;
-    grid-template-columns: 20% 80%;
-    text-align: left;    
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.navBar .pageNav button:hover{
-    background-color: black;
+.rightSide .header .profile .notification{
+    background-image: url("./img/circle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30%;
 }
 
-.navBar .pageNav img{
-    width: 1rem;
-    height: 1rem;
-}
-
-.navBar .pageNav .separater{
-    height: 7vh;
-}
-
-.navBar .pageNav .separater:hover{
-    background-color: transparent;
-}
-
-
-
-
-.rightSide{
-    background-color: var(--backGround-color);
-
-    height: 100vh;
-    width: 75vw;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.rightSide .header{
-    height: 20vh;
-
-    background-color: var(--layer-color);
-}
-
-.rightSide .header .searchBar{
-    height: 50%;
-
-    background-color: rgba(0, 0, 0, 0.3);
+.rightSide .header .profile .profilePic{
+    background-image: url("./img/circle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30%;
 }
 
 .rightSide .header .userGreet{
-    height: 50%;
-
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.rightSide .body{
-    flex: 1;
-    background-color: rgba(0, 0, 0, 0.4);
+    grid-column-start: 1;
+    grid-column-end: 4;
 
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+
+    padding-left: 1rem;
 }
 
-.rightSide .body .project{
-    width: 70%;
-
-    background-color:  rgba(255, 255, 255, 0.3);
+.rightSide .header .userGreet button{
+    background-image: url("./img/circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10%;
 }
 
-.rightSide .body .suggestion{
-    flex: 1;
-    background-color:  rgba(255, 255, 255, 0.4);
+.rightSide .header .userGreet .greetMessage > a{
+    font-size: 10px;
+}
+.rightSide .header .userGreet .greetMessage > p{
+    margin-top: 0.25rem;
+    margin-bottom: 0;
 }
 
+.rightSide .header .createNewProject{
+    grid-column-start: 4;
+    grid-column-end: 6;
 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
+    padding: 0 1rem 0 1rem;
+    gap: 1rem;
+}
 
+.rightSide .header .createNewProject button{
+    background-color: var(--contrast-color);
+    border-radius: 1rem;
 
+    width: 30%;
+    height: 50%;
+}
 
+.rightSide .body {
+	flex: 1;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	display: flex;
+	flex-direction: row;
+}
+
+.rightSide .body .project {
+	width: 70%;
+
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.rightSide .body .suggestion {
+	flex: 1;
+	background-color: rgba(255, 255, 255, 0.4);
+}

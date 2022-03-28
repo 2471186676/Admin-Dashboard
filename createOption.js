@@ -10,7 +10,7 @@ let createOption = (option) =>{
         child.className = "option"
 
         let img = document.createElement("img");
-        img.src = "./img/" +option[i] + "jpeg";
+        img.src = "./img/circle.svg";
         img.alt = "img";
         child.appendChild(img);
 
