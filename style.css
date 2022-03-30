@@ -27,17 +27,22 @@ main {
 	display: flex;
 	flex-direction: row;
 	font-family: roboto;
-	color: wheat;
+	color: black;
+}
+
+p {
+	margin: 0;
+}
+
+br {
+	height: 1rem;
 }
 
 /* --------------Left Side------------- */
 
-
 .leftSide {
 	height: 100vh;
 	width: 20vw;
-
-	padding: 10px;
 
 	background-color: var(--contrast-color);
 }
@@ -81,22 +86,30 @@ main {
 
 .navBar .pageNav {
 	flex: 1;
-	background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 1rem;
+
+    color:white;
 
 	display: flex;
 	flex-direction: column;
+
 }
 
 .navBar .pageNav button {
 	all: unset;
 	cursor: pointer;
 
+    height: 2rem;
+	padding: 5px;
+
 	display: flex;
 	flex-direction: row;
+    align-items: center;
 }
 
+
 .navBar .pageNav button:hover {
-	background-color: black;
+	background-color: rgb(68, 121, 185);
 }
 
 .navBar .pageNav img {
@@ -131,13 +144,13 @@ main {
 
 .rightSide .header {
 	height: 20vh;
+    box-shadow: 3px 3px 15px grey;
 
 	background-color: var(--layer-color);
 }
 
 .rightSide .header {
 	height: 15vh;
-	background-color: rgba(0, 0, 0, 0.3);
 
 	display: grid;
 	grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
@@ -155,7 +168,7 @@ main {
 	position: relative;
 	height: 2rem;
 	width: 90%;
-    margin-left: 5%;
+	margin-left: 5%;
 
 	background-color: white;
 	border-radius: 10rem;
@@ -168,7 +181,7 @@ main {
 
 .rightSide .header .searchBar .bar input {
 	height: 1rem;
-	width: 90%;
+	width: 85%;
 
 	border: none;
 }
@@ -178,141 +191,245 @@ main {
 }
 
 .rightSide .header .searchBar .bar button {
-	background-image: url("./img/circle.svg");
+	height: 24px;
+}
+
+.rightSide .header .profile {
+	grid-column-start: 4;
+	grid-column-end: 6;
+
+	display: flex;
+	flex-direction: row;
+	justify-content:right;
+	align-items: center;
+	gap: 2rem;
+	padding-right: 2rem;
+}
+
+.rightSide .header .profile .notification {
+	background-image: url("./img/notification.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+}
+
+.rightSide .header .profile .profilePic {
+	background-image: url("./img/dog.jpeg");
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: contain;
 
-	margin-left: 1rem;
-	height: 1rem;
-	width: 1rem;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
 }
 
-.rightSide .header .profile{
-    grid-column-start: 4;
-    grid-column-end: 6;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.rightSide .header .profile .profileName{
+	font-size: larger;
+	font-weight: bolder;
 }
 
-.rightSide .header .profile .notification{
-    background-image: url("./img/circle.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    border-radius: 50%;
+.rightSide .header .userGreet {
+	grid-column-start: 1;
+	grid-column-end: 4;
+
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	width: 100%;
+
+	padding-left: 5%;
 }
 
-.rightSide .header .profile .profilePic{
-    background-image: url("./img/circle.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 30%;
+.rightSide .header .userGreet button {
+	background-image: url("./img/dog.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:cover;
+	margin-bottom: 1px;
+
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
 }
 
-.rightSide .header .userGreet{
-    grid-column-start: 1;
-    grid-column-end: 4;
-
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-
-    padding-left: 1rem;
+.rightSide .header .userGreet .greetMessage > a {
+	font-size: 10px;
+}
+.rightSide .header .userGreet .greetMessage > p {
+	margin-top: 0.25rem;
+	margin-bottom: 0;
 }
 
-.rightSide .header .userGreet button{
-    background-image: url("./img/circle.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 10%;
+.rightSide .header .createNewProject {
+	grid-column-start: 4;
+	grid-column-end: 6;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	padding: 0 1rem 0 1rem;
+	gap: 1rem;
 }
 
-.rightSide .header .userGreet .greetMessage > a{
-    font-size: 10px;
-}
-.rightSide .header .userGreet .greetMessage > p{
-    margin-top: 0.25rem;
-    margin-bottom: 0;
-}
+.rightSide .header .createNewProject button {
+	background-color: var(--contrast-color);
+	border-radius: 1rem;
 
-.rightSide .header .createNewProject{
-    grid-column-start: 4;
-    grid-column-end: 6;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    padding: 0 1rem 0 1rem;
-    gap: 1rem;
-}
-
-.rightSide .header .createNewProject button{
-    background-color: var(--contrast-color);
-    border-radius: 1rem;
-
-    width: 30%;
-    height: 50%;
+	width: 30%;
+	height: 50%;
 }
 
 /* --------------right lower------------- */
 
 .rightSide .body {
 	flex: 1;
-	background-color: rgba(0, 0, 0, 0.4);
 
 	display: flex;
 	flex-direction: row;
 }
 
-.rightSide .body .projects{
-    width: 75%;
+.rightSide .body .projects {
+	width: 75%;
 }
 
 .rightSide .body .grouping {
-    max-width: 100%;
-    height:81vh;
+	max-width: 100%;
+	height: 81vh;
+	padding: 1rem;
 
-    padding: 1rem;
+	display: grid;
+	grid-template: 15rem 15rem / minmax(250px, 1fr) minmax(250px, 1fr);
+	grid-auto-rows: 15rem;
+	gap: 1rem;
 
-	background-color: rgba(255, 255, 255, 0.3);
-
-    display: grid;
-    grid-template: 15rem 15rem / minmax(250px, 1fr) minmax(250px, 1fr);
-    grid-auto-rows: 15rem;
-    gap:1rem;
-
-    overflow:scroll;
-    -ms-overflow-style: none;  
-    scrollbar-width: none;
+	overflow: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
-.rightSide .body .grouping::-webkit-scrollbar{
-    display: none;
+.rightSide .body .grouping::-webkit-scrollbar {
+	display: none;
 }
 
-.project{
-    background-color: #5a6b80;
+
+.project {
+	background-color: white;
+	border-radius: 10px;
+    box-shadow: 3px 3px 15px grey;
+
+    height: 14rem;
+
+	display: grid;
+	grid-template-columns: 0.5rem 1fr;
+	gap: 0.5rem;
+
+    overflow: hidden;
 }
+
+.project .sideColor {
+	border-top-left-radius: inherit;
+	border-bottom-left-radius: inherit;
+	background-color: yellowgreen;
+}
+
+.project .content {
+	margin: 5px;
+	background-color: inherit;
+
+    height: inherit;
+
+	display: grid;
+    grid-template-rows: 10% 80%;
+    gap: 0.5rem;
+}
+
+.project .content .title{
+    font-size: larger;
+    font-weight: bolder;
+    overflow: auto;
+}
+
+.project .content .textContainer{
+    overflow: scroll;
+    font-size: small;
+    -ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+
+/* --------------annoucement part------------- */
+
 
 .rightSide .body .annoucement {
-    flex:1;
-    height: 83vh;
-	background-color: rgba(255, 255, 255, 0.4);
+	flex: 1;
+	height: 83vh;
 
-    padding: 0.5rem;
+	padding: 0.5rem;
 
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 1rem;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	gap: 1rem;
 }
 
-.rightSide .body .annoucement > div{
-    border: 1px solid black;
-    padding: 3px;
+.rightSide .body .annoucement > div {
+	padding: 1rem;
+    background-color: #eff6ff8a;
+    border-radius: 10px;
 
-    display: grid;
-    grid-template-rows: 1.5rem 1fr 1fr 1fr;
+    box-shadow: 3px 3px 15px grey;
+
+	display: grid;
+	grid-template-rows: 1fr 2px 1fr 2px 1fr;
 }
+
+.lineBreak{
+    background-color: rgb(134, 134, 134);
+    border-radius: 10rem;
+}
+
+.rightSide .body .annoucement > div .title {
+   font-size: 1.2rem;
+   font-weight: bolder;
+}
+
+.rightSide .body .annoucement > div .text{
+    font-size: 0.7rem;
+}
+
+.rightSide .body .annoucement .trending .suggest{
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+}
+
+.rightSide .body .annoucement .trending .suggest img{
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+}
+
+.rightSide .body .annoucement .trending .suggest .description{
+	margin-left: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.rightSide .body .annoucement .trending .suggest .description .name{
+	font-size: larger;
+	font-weight: bolder;
+}
+
+.rightSide .body .annoucement .trending .suggest .description{
+	color: rgba(0, 0, 0, 0.5);
+}
+
 

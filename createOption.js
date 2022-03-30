@@ -1,7 +1,7 @@
 let pageNav = document.getElementsByClassName("pageNav")[0];
 console.log(pageNav);
 
-let option1 = ["Home", "Profile", "Message", "History", "Tasks", "community"];
+let option1 = ["Home", "Profile", "Message", "History", "Tasks", "Community"];
 let option2 = ["Setting", "Support", "Privacy"];
 
 let createOption = (option) =>{
@@ -10,8 +10,11 @@ let createOption = (option) =>{
         child.className = "option"
 
         let img = document.createElement("img");
-        img.src = "./img/circle.svg";
-        img.alt = "img";
+        img.src = "./img/"+option[i]+".png";
+        // img.alt = "1";
+        img.onerror = (error) =>{
+            error.target.src="./img/circle.svg";
+        }
         child.appendChild(img);
 
         let text = document.createElement("p");
